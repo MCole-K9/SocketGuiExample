@@ -21,19 +21,16 @@ public class Server {
             ObjectInputStream is = new ObjectInputStream(socket.getInputStream());
             ObjectOutputStream os = new ObjectOutputStream(socket.getOutputStream());
 
-            Object object = is.readObject();
 
-            RequestType requestType = new RequestType (object.getClass());
-            System.out.println(requestType);
-            if(requestType.isMessage()){
+            SocketData data = (SocketData) is.readObject();
 
-                Message m = (Message) object;
-                System.out.println("[ " + m.getSender() + " ] : " +m.getMessage());
-                Message message = new Message("Main Server",m.getSender(),"We have communicated successfully!", MessageType.MESSAGE);
-                os.writeObject(message);
-            }
 
-            //code to handle the client request
+
+
+
+            SocketData socketData = new SocketData((new Message("Server", "Client", "Hello", MessageType.MESSAGE)));
+
+            os.writeObject(socketData);
 
 
 

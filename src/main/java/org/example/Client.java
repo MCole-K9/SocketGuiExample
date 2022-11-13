@@ -15,8 +15,8 @@ public class Client {
         static{
 
             try {
-                //socket =  new Socket("localhost", 4444);
-                socket =  new Socket("localhost", 1234);
+                socket =  new Socket("localhost", 4444);
+//                socket =  new Socket("localhost", 1234);
                 os = new ObjectOutputStream(socket.getOutputStream());
                 is = new ObjectInputStream(socket.getInputStream());
             } catch (IOException e) {

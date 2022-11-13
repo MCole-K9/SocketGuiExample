@@ -1,7 +1,8 @@
 package org.example;
 
 enum MessageType {
-    MESSAGE
+    MESSAGE,
+    getDatabase
 
 }
 public class Message implements java.io.Serializable {
@@ -43,6 +44,8 @@ public class Message implements java.io.Serializable {
     public void setMessage(String message) {
         this.message = message;
     }
+
+
 
     @Override
     public String toString() {
